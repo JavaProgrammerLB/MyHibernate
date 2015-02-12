@@ -1,2 +1,2 @@
 # MyHibernate
-## if eclipse support md£¿
+## if eclipse support md?
