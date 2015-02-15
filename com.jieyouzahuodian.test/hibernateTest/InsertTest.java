@@ -34,6 +34,7 @@ public class InsertTest {
 		SessionFactory factory = cfg.buildSessionFactory(serviceRegistry);
 		Session session = null;
 		try {
+//			openSession()方法返回类型是Session
 			session = factory.openSession();
 //			开始事物
 			session.beginTransaction();
@@ -44,8 +45,8 @@ public class InsertTest {
 			user.setExpireTime(new DateTime().toDate());
 //			user.setCreateTime(new Date());
 //			user.setExpireTime(new Date());
+//			Session对象包括save、update、delete方法来实现基本操作			
 			session.save(user);
-			//
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			e.printStackTrace();
