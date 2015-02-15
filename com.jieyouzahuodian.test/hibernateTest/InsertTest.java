@@ -24,18 +24,18 @@ public class InsertTest {
 	public static void main(String[] args) {
 		Configuration cfg = new Configuration().configure();
 		@SuppressWarnings("deprecation")
-//		´´½¨serviceRegistryµÄhibernateÀÏ°æ±¾²ÉÓÃµÄ·½·¨£ºbuildSessionFactory
-//  	»á»°¹¤³§£¬Ãû×ÖºóÃæÓĞFactoryÊÇÒòÎª²ÉÓÃÁËFactoryÉè¼ÆÄ£Ê½
+//		åˆ›å»ºserviceRegistryçš„hibernateè€ç‰ˆæœ¬é‡‡ç”¨çš„æ–¹æ³•ï¼šbuildSessionFactory
+//  	        ä¼šè¯å·¥å‚ï¼Œåå­—åé¢æœ‰Factoryæ˜¯å› ä¸ºé‡‡ç”¨äº†Factoryè®¾è®¡æ¨¡å¼
 //		SessionFactory factory  = cfg.buildSessionFactory();
 		
 		
-//		´´½¨SessionFactory¶ÔÏóµÄµÚ¶ş¸ö·½·¨
+//		åˆ›å»ºSessionFactoryå¯¹è±¡çš„ç¬¬äºŒä¸ªæ–¹æ³•
 		ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(cfg.getProperties()).buildServiceRegistry(); 
 		SessionFactory factory = cfg.buildSessionFactory(serviceRegistry);
 		Session session = null;
 		try {
 			session = factory.openSession();
-//			¿ªÊ¼ÊÂÎï
+//			å¼€å§‹äº‹ç‰©
 			session.beginTransaction();
 			User user = new User();
 			user.setName("liubei");
